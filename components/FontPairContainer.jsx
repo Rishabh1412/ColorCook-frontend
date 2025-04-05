@@ -11,14 +11,14 @@ const FontPairContainer = () => {
   const [currentFont, setCurrentFont] = useState({
     fontFamily: "Inter",
     weight: "400",
-    size: "16px",
-    color: "#000000",
+    size: "32px",
+    color: "#ffffff",
     opacity: 1,
     rotate: 0,
     styles: { bold: false, italic: false, underline: false },
   });
   const [availableFonts, setAvailableFonts] = useState([]);
-  const [bgColor, setBgColor] = useState("#ffffff");
+  const [bgColor, setBgColor] = useState("#000000");
 
   useEffect(() => {
     async function loadFonts() {

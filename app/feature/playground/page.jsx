@@ -12,7 +12,7 @@ const Playground = ({
    // Default value for fontFeatureType
 
   return (
-    <div className="space-y-8 p-4 bg-[#fff]">
+    <div className="space-y-8 px-4  bg-[#fff]">
       {/* Fonts Section */}
       <section
         ref={fontsRef}
