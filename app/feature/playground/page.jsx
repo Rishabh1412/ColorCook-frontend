@@ -1,6 +1,6 @@
 import React from "react";
 
-import FontPairContainer from "@/components/FontPair";
+import FontPairContainer from "@/components/FontPairContainer";
 
 const Playground = ({
   fontsRef,

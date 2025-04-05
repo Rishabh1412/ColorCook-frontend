@@ -11,7 +11,7 @@ const convertVariant = (variant) => {
   return variant;
 };
 
-const FontConfig = ({ fonts, currentFont, onFontChange }) => {
+const FontConfig = ({ fonts, onFontChange }) => {
   const [selectedFont, setSelectedFont] = useState("Inter");
   const [availableWeights, setAvailableWeights] = useState(["400"]);
   const [selectedWeight, setSelectedWeight] = useState("400");
@@ -38,7 +38,6 @@ const FontConfig = ({ fonts, currentFont, onFontChange }) => {
     }
   }, [selectedFont, fonts, selectedWeight]);
 
-  
   // Propagate the current configuration to the parent
   useEffect(() => {
     if (onFontChange) {

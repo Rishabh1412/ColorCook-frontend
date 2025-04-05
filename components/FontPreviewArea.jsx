@@ -8,7 +8,7 @@ const FontPreviewArea = ({ currentFont, bgColor, setBgColor }) => {
 
   return (
     <div
-      className="rounded-2xl w-full relative border max-h-80 min-h-80 overflow-hidden border-gray-100 col-span-2 flex items-center justify-center"
+      className="rounded-2xl w-full relative border max-h-80 min-h-80 overflow-hidden border-gray-200 col-span-2 flex items-center justify-center"
       style={{ backgroundColor: bgColor }}
       ref={dragAreaRef}
     >
