@@ -1,15 +1,14 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const raleway = Raleway({
+  variable: "--font-raleway",
+  weight: ['100','200','300','400','500','600','700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -19,9 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${raleway.variable} antialiased w-full h-screen`}>
         {children}
       </body>
     </html>

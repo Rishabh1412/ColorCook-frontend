@@ -1,26 +1,35 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Parkinsans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@theme{
+  --font-Raleway: "Raleway","sans-serif";
+  --font-Poppins: "Poppins","sans-serif";
+
+  --color-purple-deep: #5724ff;
+  --color-blue-back: #E8F9FF;
+  --color-yellow-cta: #edff66;
+  --color-sea-left: #1CD8D2;
+  --color-sea-right: #93EDC7;
+
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --deep-purple: #5724FF;
+  --background-blue: #E8F9FF;
+  --cta-color: #EDFF66;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*{
+  font-family:'Raleway', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.poppins{
+  font-family: 'Poppins',sans-serif;
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.normWeight{
+  font-weight: 400;
 }

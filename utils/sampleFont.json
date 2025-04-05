@@ -1,0 +1,53 @@
+{
+    "Serif": {
+      "Classic": [
+        { "name": "Times New Roman", "variants": ["400", "700"], "use_cases": ["Print media", "Formal documents", "Books"], "pairing_suggestions": ["Arial", "Georgia"] },
+        { "name": "Garamond", "variants": ["400", "700"], "use_cases": ["Books", "Editorials", "Luxury branding"], "pairing_suggestions": ["Helvetica", "Futura"] },
+        { "name": "Baskerville", "variants": ["400", "700"], "use_cases": ["Magazines", "Formal invitations", "Logos"], "pairing_suggestions": ["Futura", "Garamond"] },
+        { "name": "Palatino", "variants": ["400", "700"], "use_cases": ["Books", "Academic papers", "Editorial design"], "pairing_suggestions": ["Helvetica", "Lato"] }
+      ],
+      "Modern": [
+        { "name": "Playfair Display", "variants": ["400", "500", "600", "700"], "use_cases": ["Web headers", "Fashion brands", "Luxury design"], "pairing_suggestions": ["Montserrat", "Lora"] },
+        { "name": "Merriweather", "variants": ["300", "400", "700", "900"], "use_cases": ["Blogs", "Long-form reading", "News websites"], "pairing_suggestions": ["Open Sans", "Roboto"] },
+        { "name": "Lora", "variants": ["400", "500", "600", "700"], "use_cases": ["Web content", "Editorials", "Brand identity"], "pairing_suggestions": ["Roboto", "Nunito"] },
+        { "name": "Crimson Text", "variants": ["400", "600", "700"], "use_cases": ["Book publishing", "Classical design", "Luxury branding"], "pairing_suggestions": ["Lato", "Futura"] }
+      ]
+    },
+    "Sans-Serif": {
+      "Geometric": [
+        { "name": "Futura", "variants": ["300", "400", "500", "700"], "use_cases": ["Logos", "Minimalist design", "Posters"], "pairing_suggestions": ["Garamond", "Baskerville"] },
+        { "name": "Avenir", "variants": ["300", "400", "500", "700", "900"], "use_cases": ["Tech branding", "Web UI", "Print"], "pairing_suggestions": ["Lora", "Merriweather"] },
+        { "name": "Poppins", "variants": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "use_cases": ["Modern UI", "Marketing", "Tech companies"], "pairing_suggestions": ["Lora", "Playfair Display"] },
+        { "name": "Montserrat", "variants": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "use_cases": ["Corporate websites", "Posters", "Luxury branding"], "pairing_suggestions": ["Raleway", "Open Sans"] }
+      ],
+      "Humanist": [
+        { "name": "Gill Sans", "variants": ["400", "500", "700"], "use_cases": ["Signage", "Editorial design", "Corporate branding"], "pairing_suggestions": ["Caslon", "Times New Roman"] },
+        { "name": "Raleway", "variants": ["100", "200", "300", "400", "500", "600", "700", "800", "900"], "use_cases": ["Web design", "Marketing materials", "Startups"], "pairing_suggestions": ["Lora", "Playfair Display"] },
+        { "name": "Lato", "variants": ["100", "300", "400", "700", "900"], "use_cases": ["Web apps", "Corporate identity", "Digital products"], "pairing_suggestions": ["Merriweather", "Lora"] },
+        { "name": "Nunito", "variants": ["200", "300", "400", "600", "700", "900"], "use_cases": ["Educational websites", "Tech startups", "UX design"], "pairing_suggestions": ["Crimson Text", "Playfair Display"] }
+      ]
+    },
+    "Display": {
+      "Bold & Impactful": [
+        { "name": "Bebas Neue", "variants": ["400", "700"], "use_cases": ["Posters", "Headlines", "Advertising"], "pairing_suggestions": ["Lato", "Montserrat"] },
+        { "name": "Anton", "variants": ["400"], "use_cases": ["Sport branding", "Promotional banners", "Gaming"], "pairing_suggestions": ["Roboto", "Poppins"] },
+        { "name": "Oswald", "variants": ["200", "300", "400", "500", "600", "700"], "use_cases": ["Posters", "Magazines", "Bold advertising"], "pairing_suggestions": ["Lato", "Raleway"] },
+        { "name": "Impact", "variants": ["400"], "use_cases": ["Attention-grabbing headlines", "Promotional materials", "Bold branding"], "pairing_suggestions": ["Arial", "Futura"] }
+      ],
+      "Decorative": [
+        { "name": "Lobster", "variants": ["400"], "use_cases": ["Logos", "Cafe branding", "Greeting cards"], "pairing_suggestions": ["Montserrat", "Open Sans"] },
+        { "name": "Pacifico", "variants": ["400"], "use_cases": ["Handwritten aesthetics", "Greeting cards", "Casual branding"], "pairing_suggestions": ["Lato", "Raleway"] },
+        { "name": "Great Vibes", "variants": ["400"], "use_cases": ["Wedding invitations", "Luxury branding", "Elegant design"], "pairing_suggestions": ["Lora", "Playfair Display"] },
+        { "name": "Satisfy", "variants": ["400"], "use_cases": ["Handwritten branding", "Casual websites", "Playful designs"], "pairing_suggestions": ["Poppins", "Fira Sans"] }
+      ]
+    },
+    "Monospace": {
+      "Technical": [
+        { "name": "Courier New", "variants": ["400", "700"], "use_cases": ["Code snippets", "Terminal displays", "Retro aesthetics"], "pairing_suggestions": ["Helvetica", "Fira Sans"] },
+        { "name": "Fira Code", "variants": ["300", "400", "500", "700"], "use_cases": ["Programming", "Tech branding", "Web development"], "pairing_suggestions": ["Roboto", "Lato"] },
+        { "name": "Inconsolata", "variants": ["400", "700"], "use_cases": ["Coding environments", "Developer branding", "Tech posters"], "pairing_suggestions": ["Poppins", "Roboto"] },
+        { "name": "JetBrains Mono", "variants": ["400", "500", "600", "700"], "use_cases": ["Code editors", "Developer branding", "Modern tech UI"], "pairing_suggestions": ["Inter", "Roboto"] }
+      ]
+    }
+  }
+  
