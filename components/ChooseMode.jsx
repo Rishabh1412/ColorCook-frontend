@@ -15,7 +15,7 @@ const ChooseMode = ({ options, onSelect }) => {
       {options.map((option, index) => (
         <button
           key={index}
-          className={`py-2 px-4 transition-all ${
+          className={`py-2 px-4 w-full transition-all ${
             selected === option ? "bg-gradient-to-r from-teal-400 to-sea-left text-white rounded-md" : ""
           }`}
           onClick={() => handleSelect(option)}

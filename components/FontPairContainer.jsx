@@ -8,7 +8,7 @@ import { fetchFonts, generateFontLink } from "../utils/googleFontsUtils";
 
 const FontPairContainer = () => {
   const [fontFeatureType, setFontFeatureType] = useState("Manual");
-  const [currentFont, setCurrentFont] = useState({
+  const [currentMainFont, setCurrentMainFont] = useState({
     fontFamily: "Inter",
     weight: "400",
     size: "32px",
@@ -17,9 +17,25 @@ const FontPairContainer = () => {
     rotate: 0,
     styles: { bold: false, italic: false, underline: false },
   });
+  const [currentSubFont, setCurrentSubFont] = useState({
+    fontFamily: "Robot",
+    weight: "400",
+    size: "24px",
+    color: "#cccccc",
+    opacity: 1,
+    rotate: 0,
+    styles: { bold: false, italic: false, underline: false },
+  });
   const [availableFonts, setAvailableFonts] = useState([]);
   const [bgColor, setBgColor] = useState("#000000");
 
+  const mainFontLink = generateFontLink(currentMainFont.fontFamily, [
+    currentMainFont.weight,
+  ]);
+  const subFontLink = generateFontLink(currentSubFont.fontFamily, [
+    currentSubFont.weight,
+  ]);
+  
   useEffect(() => {
     async function loadFonts() {
       const fontsData = await fetchFonts();
@@ -31,22 +47,24 @@ const FontPairContainer = () => {
     }
     loadFonts();
   }, []);
-
-  const googleFontLink = generateFontLink(currentFont.fontFamily, [
-    currentFont.weight,
-  ]);
+  
 
   useEffect(() => {
-    const id = "google-font-link";
-    let linkTag = document.getElementById(id);
-    if (!linkTag) {
-      linkTag = document.createElement("link");
-      linkTag.id = id;
-      linkTag.rel = "stylesheet";
-      document.head.appendChild(linkTag);
-    }
-    linkTag.href = googleFontLink;
-  }, [googleFontLink]);
+    const ensureFontLink = (id, href) => {
+      let linkTag = document.getElementById(id);
+      if (!linkTag) {
+        linkTag = document.createElement("link");
+        linkTag.id = id;
+        linkTag.rel = "stylesheet";
+        document.head.appendChild(linkTag);
+      }
+      linkTag.href = href;
+    };
+  
+    ensureFontLink("google-font-link-main", mainFontLink);
+    ensureFontLink("google-font-link-sub", subFontLink);
+  }, [mainFontLink, subFontLink]);
+  
 
   return (
     <div>
@@ -66,21 +84,23 @@ const FontPairContainer = () => {
       {fontFeatureType === "Manual" ? (
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-3">
           <FontPreviewArea
-            currentFont={currentFont}
+            currentMainFont={currentMainFont}
+            currentSubFont={currentSubFont}
             bgColor={bgColor}
             setBgColor={setBgColor}
           />
           <FontConfigPanel
             fonts={availableFonts}
-            currentFont={currentFont}
-            setCurrentFont={setCurrentFont}
+            currentMainFont={currentMainFont}
+            setCurrentMainFont={setCurrentMainFont}
+            currentSubFont={currentSubFont}
+            setCurrentSubFont={setCurrentSubFont}
           />
         </div>
       ) : (
         <div>Generate Mode: Auto-generated font pairings</div>
       )}
-
-      <FontControls googleFontLink={googleFontLink} currentFont={currentFont} />
+      <FontControls googleFontLink={mainFontLink} currentFont={currentMainFont} />
     </div>
   );
 };

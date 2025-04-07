@@ -4,10 +4,11 @@ import { motion } from "motion/react";
 import * as htmlToImage from "html-to-image";
 import download from "downloadjs";
 
-const FontPreviewArea = ({ currentFont, bgColor, setBgColor }) => {
+const FontPreviewArea = ({ currentMainFont,currentSubFont, bgColor, setBgColor }) => {
   const dragAreaRef = useRef(null);
   const previewRef = useRef(null);
   const [editing, setEditing] = useState(false);
+  const [editingSub, setEditingSub] = useState(false);
   const [canDownload, setCanDownload] = useState(false);
 
   const handleCanDownload=()=>{
@@ -51,28 +52,39 @@ const FontPreviewArea = ({ currentFont, bgColor, setBgColor }) => {
       console.error("High-quality image export failed", error);
     }
   };
-  
 
+  
   const textStyles = {
-    fontFamily: currentFont.fontFamily,
-    fontWeight: currentFont?.styles?.bold
+    fontFamily: currentMainFont.fontFamily,
+    fontWeight: currentMainFont?.styles?.bold
       ? "bold"
-      : currentFont?.weight || "400",
-    fontSize: currentFont?.size || "16px",
-    color: currentFont?.color || "#000000",
-    fontStyle: currentFont?.styles?.italic ? "italic" : "normal",
-    opacity: currentFont?.opacity ?? 1,
-    textDecoration: currentFont?.styles?.underline ? "underline" : "none",
+      : currentMainFont?.weight || "400",
+    fontSize: currentMainFont?.size || "16px",
+    color: currentMainFont?.color || "#000000",
+    fontStyle: currentMainFont?.styles?.italic ? "italic" : "normal",
+    opacity: currentMainFont?.opacity ?? 1,
+    textDecoration: currentMainFont?.styles?.underline ? "underline" : "none",
+  };
+  const textStylesSub = {
+    fontFamily: currentSubFont.fontFamily,
+    fontWeight: currentSubFont?.styles?.bold
+      ? "bold"
+      : currentSubFont?.weight || "400",
+    fontSize: currentSubFont?.size || "16px",
+    color: currentSubFont?.color || "#000000",
+    fontStyle: currentSubFont?.styles?.italic ? "italic" : "normal",
+    opacity: currentSubFont?.opacity ?? 1,
+    textDecoration: currentSubFont?.styles?.underline ? "underline" : "none",
   };
 
   return (
     <div
-      className="rounded-2xl w-full relative border max-h-80 min-h-80 overflow-hidden border-gray-200 col-span-2 flex items-center justify-center"
+      className="rounded-2xl w-full relative border h-full overflow-hidden border-gray-200 col-span-2 flex items-center justify-center"
       style={{ backgroundColor: bgColor }}
       ref={dragAreaRef}
     >
       {/* Background color picker */}
-      <div className="absolute top-0 right-0 z-10 rounded-md bg-white/70 px-3 gap-2 overflow-auto flex max-w-32">
+      <div className="absolute top-0 right-0 z-10 rounded-md bg-white/70 px-2 gap-2 overflow-auto flex max-w-32">
         <input
           type="color"
           value={bgColor}
@@ -138,12 +150,29 @@ const FontPreviewArea = ({ currentFont, bgColor, setBgColor }) => {
           dragElastic={0.2}
           dragMomentum={false}
           whileDrag={{ scale: 1.05 }}
-          animate={{ rotate: parseInt(currentFont.rotate || 0) }}
+          animate={{ rotate: parseInt(currentMainFont.rotate || 0) }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="absolute hover:cursor-grabbing hover:border-2 hover:border-blue-400 px-2 py-1"
+          className="absolute hover:cursor-grabbing hover:border-2 z-10 hover:border-blue-400 px-2 py-1"
           style={textStyles}
         >
           Text Preview
+        </motion.div>
+        <motion.div
+          contentEditable={editingSub}
+          onDoubleClick={() => setEditingSub(true)}
+          onBlur={() => setEditingSub(false)}
+          suppressContentEditableWarning={true}
+          drag
+          dragConstraints={dragAreaRef}
+          dragElastic={0.2}
+          dragMomentum={false}
+          whileDrag={{ scale: 1.05 }}
+          animate={{ rotate: parseInt(currentSubFont.rotate || 0) }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="absolute hover:cursor-grabbing hover:border-2 hover:border-blue-400 px-2 py-1"
+          style={textStylesSub}
+        >
+          Text Sub Preview
         </motion.div>
       </div>
     </div>
